@@ -43,7 +43,7 @@
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
         
         <!-- Left Content -->
-        <div class="text-light order-2 md:order-1 animate-on-scroll animate-slide-left">
+        <div class="text-light order-2 md:order-1 text-justify panimate-on-scroll animate-slide-left">
           <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-6xl font-bold mb-8 animate-on-scroll stagger-1">
             {{ t('home.about.title') }}
           </h2>
@@ -100,7 +100,7 @@
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-stretch">
         
         <!-- Left Content -->
-        <div class="text-light order-2 md:order-1 flex flex-col justify-center">
+        <div class="text-light order-2 md:order-1 flex flex-col justify-center pl-5">
           <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
             {{ t('home.formacio.title') }}
           </h2>
@@ -144,12 +144,12 @@
 
         <!-- Right Content (50% width) -->
         <div class="order-2 md:order-2 flex items-center">
-          <div class="text-primary">
-            <h2 class="font-barlow text-primary text-3xl md:text-5xl lg:text-5xl font-bold mb-8">
+          <div class="text-primary px-10 pb-10">
+            <h2 class="font-barlow text-primary text-3xl md:text-5xl lg:text-5xlfont-bold mb-8">
               {{ t('home.elegirnos.title') }}
             </h2>
             
-            <p class="text-primary text-xl md:text-2xl mb-6 leading-relaxed">
+            <p class="text-primary text-xl md:text-2xl text-justify mb-6 leading-relaxed">
               {{ t('home.elegirnos.description1') }}
             </p>
             
@@ -157,7 +157,7 @@
               {{ t('home.elegirnos.description2') }}
             </p>
             
-            <p class="text-primary text-xl md:text-2xl leading-relaxed">
+            <p class="text-primary text-xl md:text-2xl text-justify leading-relaxed">
               {{ t('home.elegirnos.description3') }}
             </p>
           </div>

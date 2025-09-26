@@ -15,20 +15,20 @@
 
       <!-- Right Content -->
       <div class="order-2 md:order-2 flex items-center">
-        <div class="text-primary">
+        <div class="text-primary px-10 pb-10">
           <h2 class="text-primary text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
             {{ t('home.quisoc.title') }}
           </h2>
           
-          <p class="text-primary text-xl md:text-2xl mb-6 leading-relaxed">
+          <p class="text-primary text-xl md:text-2xl text-justify mb-6 leading-relaxed">
             {{ t('home.quisoc.intro') }}
           </p>
           
-          <p class="text-primary text-xl md:text-2xl mb-6 leading-relaxed">
+          <p class="text-primary text-xl md:text-2xl text-justify mb-6 leading-relaxed">
             {{ t('home.quisoc.introDescription1') }}
           </p>
           
-          <p class="text-primary text-xl md:text-2xl leading-relaxed">
+          <p class="text-primary text-xl md:text-2xl text-justify leading-relaxed">
             {{ t('home.quisoc.introDescription2') }}
           </p>
         </div>
