@@ -93,7 +93,7 @@
   }
 
   .bg-footer {
-    background-color: var(--color-footer);
+    background-color: var(--color-gray-600);
   }
 
   .border-accent {
