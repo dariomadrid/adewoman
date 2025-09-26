@@ -8,10 +8,10 @@
         <div class="mb-8">
           <div class="flex items-center space-x-2">
             <h1 class="font-hussar text-3xl md:text-4xl lg:text-5xl font-medium tracking-wider text-light">
-              AW
+              {{ t('home.hero.title') }}
             </h1>
             <h2 class="font-barlow text-lg md:text-xl lg:text-2xl font-light tracking-widest text-light">
-              FISIOTERAPIA
+              {{ t('home.hero.subtitle') }}
             </h2>
           </div>
         </div>
@@ -26,7 +26,7 @@
           <!-- Location and Contact Section -->
           <div class="text-left">
             <h3 class="font-barlow text-base md:text-lg font-medium mb-3 text-light">
-              DÓNDE ESTAMOS
+              {{ t('footer.contact.location') }}
             </h3>
             
             <div class="space-y-2 mb-4">
@@ -38,15 +38,15 @@
                 </div>
                 <div>
                   <p class="text-xs md:text-sm leading-snug">
-                    <span class="underline">C/ Marquès de Caldes de Montbui, 62</span><br>
-                    <span class="underline">Girona, 17003</span>
+                    <span class="underline">{{ siteConfig.contact.address.street }}</span><br>
+                    <span class="underline">{{ siteConfig.contact.address.city }}, {{ siteConfig.contact.address.postalCode }}</span>
                   </p>
                 </div>
               </div>
             </div>
 
             <h3 class="font-barlow text-base md:text-lg font-medium mb-3 text-light">
-              CONTACTO
+              {{ t('footer.contact.title') }}
             </h3>
             
             <div class="space-y-2">
@@ -92,7 +92,12 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="text-xs md:text-sm">adewomanfisioterapia@gmail.com</p>
+                  <a 
+                    :href="`mailto:${siteConfig.contact.email}`"
+                    class="text-xs md:text-sm hover:underline transition-all"
+                  >
+                    {{ siteConfig.contact.email }}
+                  </a>
                 </div>
               </div>
 
@@ -104,11 +109,11 @@
                 </div>
                 <div>
                   <a 
-                    href="https://instagram.com/adewomanfisioterapia" 
+                    :href="siteConfig.social.instagram.url" 
                     target="_blank"
                     class="text-xs md:text-sm hover:underline transition-all"
                   >
-                    @adewomanfisioterapia
+                    {{ siteConfig.social.instagram.username }}
                   </a>
                 </div>
               </div>
@@ -118,23 +123,23 @@
           <!-- Schedule Section -->
           <div class="text-left">
             <h3 class="font-barlow text-base md:text-lg font-medium mb-3 text-light">
-              HORARIO
+              {{ t('footer.schedule.title') }}
             </h3>
             
             <div class="space-y-2">
               <div>
-                <p class="text-xs md:text-sm font-normal mb-1">Lunes, Martes y Jueves</p>
-                <p class="text-xs md:text-sm">14.00 - 20.00</p>
+                <p class="text-xs md:text-sm font-normal mb-1">{{ t('footer.schedule.weekdays') }}</p>
+                <p class="text-xs md:text-sm">{{ t('footer.schedule.weekdaysTime') }}</p>
               </div>
               
               <div>
-                <p class="text-xs md:text-sm font-normal mb-1">Miércoles y Viernes</p>
-                <p class="text-xs md:text-sm">8.00 - 15.00</p>
+                <p class="text-xs md:text-sm font-normal mb-1">{{ t('footer.schedule.midweek') }}</p>
+                <p class="text-xs md:text-sm">{{ t('footer.schedule.midweekTime') }}</p>
               </div>
               
               <div>
-                <p class="text-xs md:text-sm font-normal mb-1">Sábado y Domingo</p>
-                <p class="text-xs md:text-sm">CERRADO</p>
+                <p class="text-xs md:text-sm font-normal mb-1">{{ t('footer.schedule.weekend') }}</p>
+                <p class="text-xs md:text-sm">{{ t('footer.schedule.closed') }}</p>
               </div>
             </div>
           </div>
@@ -142,7 +147,7 @@
           <!-- Legal Links Section -->
           <div class="text-left">
             <h3 class="font-barlow text-base md:text-lg font-medium mb-3 text-light">
-              LEGAL
+              {{ t('footer.legal.title') }}
             </h3>
             
             <div class="space-y-2">
@@ -151,7 +156,7 @@
                   href="#" 
                   class="text-xs md:text-sm hover:underline transition-all block"
                 >
-                  Política de Privacidad
+                  {{ t('footer.legal.privacy') }}
                 </a>
               </div>
               
@@ -160,7 +165,7 @@
                   href="#" 
                   class="text-xs md:text-sm hover:underline transition-all block"
                 >
-                  Términos y Condiciones
+                  {{ t('footer.legal.terms') }}
                 </a>
               </div>
               
@@ -169,7 +174,7 @@
                   href="#" 
                   class="text-xs md:text-sm hover:underline transition-all block"
                 >
-                  Política de Cookies
+                  {{ t('footer.legal.cookies') }}
                 </a>
               </div>
 
@@ -178,7 +183,7 @@
                   href="#" 
                   class="text-xs md:text-sm hover:underline transition-all block"
                 >
-                  Aviso Legal
+                  {{ t('footer.legal.notice') }}
                 </a>
               </div>
             </div>
@@ -191,7 +196,7 @@
           <button 
             @click="scrollToTop" 
             class="bg-accent-dark hover:bg-accent text-white rounded-full p-3 xl:p-4 transition-all duration-300 hover:scale-110 inline-flex items-center justify-center cursor-pointer"
-            aria-label="Volver al inicio"
+            :aria-label="t('common.backToTop')"
           >
             <svg class="w-5 h-5 xl:w-6 xl:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
@@ -207,15 +212,30 @@
 
 <script>
 import { siteConfig } from '../config/site.js';
+import { t, getCurrentLang } from '../config/i18n.js';
 
 export default {
   name: 'Footer',
+  props: {
+    lang: {
+      type: String,
+      default: 'ca'
+    }
+  },
   data() {
     return {
       siteConfig
     };
   },
+  computed: {
+    currentLang() {
+      return this.lang || getCurrentLang();
+    }
+  },
   methods: {
+    t(key) {
+      return t(key, this.currentLang);
+    },
     scrollToTop() {
       window.scrollTo({
         top: 0,

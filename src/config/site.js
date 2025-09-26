@@ -3,7 +3,8 @@ import { defaultLang, translations } from './i18n.js';
 
 export const siteConfig = {
   // Basic site information
-  name: "ADEWOMAN",  
+  name: "ADEWOMAN",
+  name: "adewoman",
   title: {
     ca: "ADEWOMAN - Fisioteràpia",
     es: "ADEWOMAN - Fisioterapia"

@@ -17,19 +17,19 @@
       <div class="order-2 md:order-2 flex items-center">
         <div class="text-primary">
           <h2 class="text-primary text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-            SOBRE MI
+            {{ t('home.quisoc.title') }}
           </h2>
           
           <p class="text-primary text-xl md:text-2xl mb-6 leading-relaxed">
-            Aunque siempre he sufrido dolor durante la menstruación, mediante medicación y la falta de respuestas de profesionales, normalicé que la regla duele.
+            {{ t('home.quisoc.intro') }}
           </p>
           
           <p class="text-primary text-xl md:text-2xl mb-6 leading-relaxed">
-            No fue hasta 2020 que empecé a buscar respuestas, ya que la intensidad del dolor llegó a incapacitarme provocándome desmayos.
+            {{ t('home.quisoc.introDescription1') }}
           </p>
           
           <p class="text-primary text-xl md:text-2xl leading-relaxed">
-            Tras varias visitas a diferentes ginecólogo/as me diagnosticaron adenomiosis y un foco de endometriosis. Fue entonces cuando fui consciente de la necesidad de muchas mujeres, y que debía enfocar mi trabajo (mi pasión) a buscar herramientas para el bienestar de todas ellas.
+            {{ t('home.quisoc.introDescription2') }}
           </p>
         </div>
       </div>
@@ -39,12 +39,24 @@
 </template>
 
 <script>
+import { t, getCurrentLang } from '../config/i18n.js';
+
 export default {
-  name: 'AboutMe',
+  name: 'quisoc',
   props: {
     lang: {
       type: String,
       default: 'ca'
+    }
+  },
+  computed: {
+    currentLang() {
+      return this.lang || getCurrentLang();
+    }
+  },
+  methods: {
+    t(key) {
+      return t(key, this.currentLang);
     }
   }
 }

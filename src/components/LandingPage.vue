@@ -29,10 +29,10 @@
         <!-- Main Logo/Title -->
         <div class="mb-8 mt-20">
           <h1 class="font-hussar text-8xl md:text-9xl lg:text-[12rem] font-bold tracking-wider text-white">
-            AW
+            {{ t('home.hero.title') }}
           </h1>
-          <h2 class="font-barlow text-4xl md:text-6xl lg:text-7xl font-light tracking-widest mt-2 text-white">
-            FISIOTERAPIA
+                    <h2 class="font-barlow text-4xl md:text-6xl lg:text-7xl font-light tracking-widest mt-2 text-white">
+            {{ t('home.hero.subtitle') }}
           </h2>
         </div>
       </div>
@@ -45,28 +45,27 @@
         <!-- Left Content -->
         <div class="text-light order-2 md:order-1 animate-on-scroll animate-slide-left">
           <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-6xl font-bold mb-8 animate-on-scroll stagger-1">
-            ADEWOMAN<br>
-            FISIOTERAPIA
+            {{ t('home.about.title') }}
           </h2>
           
           <h4 class="font-barlow text-light text-2xl md:text-2xl lg:text-2xl font-semibold mb-6 animate-on-scroll stagger-2">
-            FISIOTERAPIA PARA LA SALUD DE LA MUJER.
+            {{ t('home.about.subtitle') }}
           </h4>
           
           <p class="text-xl md:text-2xl mb-6">
-            Soy Jéssica González Sánchez, aunque todos me llaman Jess.
+            {{ t('home.about.intro') }}
           </p>
           
           <p class="text-xl md:text-2xl mb-6 leading-relaxed">
-            Después de varios años trabajando para otras empresas, creé un espacio donde mujeres de todas las edades pudieran aprender a escuchar y cuidar de su cuerpo.
+            {{ t('home.about.introDescription1') }}
           </p>
           
           <p class="text-xl md:text-2xl mb-6 leading-relaxed">
-            Un espacio seguro, donde la comunicación y el aprendizaje sobre el cuerpo son claves para un tratamiento con éxito.
+            {{ t('home.about.introDescription2') }}
           </p>
           
           <p class="text-xl md:text-2xl leading-relaxed">
-            Así nace Adewoman Fisioterapia.
+            {{ t('home.about.introConclusion') }}
           </p>
         </div>
 
@@ -84,16 +83,16 @@
       </div>
     </section>
 
-    <!-- Qui soc (About Me) with entrance parallax -->
+    <!-- QUI SOC -->
     <div 
-      ref="aboutSection"
+      ref="quisocSection"
       class="transition-transform duration-300 ease-out"
       :style="{ 
-        transform: aboutVisible ? 'translateY(0)' : 'translateY(30px)',
-        opacity: aboutVisible ? 1 : 0.8
+        transform: quisocVisible ? 'translateY(0)' : 'translateY(30px)',
+        opacity: quisocVisible ? 1 : 0.8
       }"
     >
-      <AboutMe :lang="currentLang" />
+      <quisoc :lang="currentLang" />
     </div>
 
     <!-- Formación -->
@@ -103,45 +102,13 @@
         <!-- Left Content -->
         <div class="text-light order-2 md:order-1 flex flex-col justify-center">
           <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-            FORMACIÓN
+            {{ t('home.formacio.title') }}
           </h2>
           
           <ul class="text-xl md:text-2xl space-y-2 leading-relaxed">
-            <li class="flex items-start">
+            <li v-for="item in t('home.formacio.items')" :key="item" class="flex items-start">
               <span class="text-light mr-3">•</span>
-              <span class="text-light">DIPLOMADA EN FISIOTERAPIA</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">MÁSTER EN REEDUCACIÓN DE SUELO PÉLVICO</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">OSTEOPATÍA</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">CONCEPTO GDP</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">FISIOSEXÓLOGA</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">ACTIVIDAD FÍSICA Y EJERCICIO TERAPÉUTICO EN EL EMBARAZO</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">TRATAMIENTO DE LA DIÁSTASIS</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">ESCUELA DE LA ESPALDA: PILATES TERAPÉUTICO, HIPOPRESIVO Y EJERCICIO FUNCIONAL</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">CÓLICO DEL LACTANTE</span>
+              <span class="text-light">{{ item }}</span>
             </li>
           </ul>
         </div>
@@ -179,19 +146,19 @@
         <div class="order-2 md:order-2 flex items-center">
           <div class="text-primary">
             <h2 class="font-barlow text-primary text-3xl md:text-5xl lg:text-5xl font-bold mb-8">
-              ¿POR QUÉ ELEGIRNOS?
+              {{ t('home.elegirnos.title') }}
             </h2>
             
             <p class="text-primary text-xl md:text-2xl mb-6 leading-relaxed">
-              Vivir y entender el DOLOR, me ha enseñado a conectar a un nivel mayor con mis pacientes.
+              {{ t('home.elegirnos.description1') }}
             </p>
             
             <p class="text-primary text-xl md:text-2xl mb-6 leading-relaxed">
-              Conocer tu cuerpo y como funciona, es la mayor herramienta que te puedo proporcionar.
+              {{ t('home.elegirnos.description2') }}
             </p>
             
             <p class="text-primary text-xl md:text-2xl leading-relaxed">
-              Poco a poco iremos trabajando sobre el problema, y buscaremos el tratamiento que mejor se adecue a tus necesidades.
+              {{ t('home.elegirnos.description3') }}
             </p>
           </div>
         </div>
@@ -206,50 +173,17 @@
         <!-- Left Content -->
         <div class="text-light order-1 md:order-1 animate-on-scroll animate-slide-left">
           <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-5xl font-bold mb-8 animate-on-scroll stagger-1">
-            CENTRO<br>
-            ESPECIALIZADO
+            {{ t('home.centro.title') }}
           </h2>
           
           <p class="text-light text-xl md:text-2xl mb-8 leading-relaxed animate-on-scroll stagger-2">
-            Llevamos más de 9 años acompañando a mujeres en todas sus etapas.
+            {{ t('home.centro.description') }}
           </p>
           
           <ul class="text-xl md:text-2xl space-y-3 leading-relaxed">
-            <li class="flex items-start">
+            <li v-for="service in t('home.centro.services')" :key="service" class="flex items-start">
               <span class="text-light mr-3">•</span>
-              <span class="text-light">ENDOMETRIOSIS / ADENOMIOSIS</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">FERTILIDAD Y EMBARAZO</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">DOLOR / DISFUNCIONES SEXUALES</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">PROLAPSOS</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">POSTPARTO</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">TRATAMIENTO CICATRICES</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">DISFUNCIONES SUELO PÉLVICO</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">EJERCICIO TERAPÉUTICO</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-light mr-3">•</span>
-              <span class="text-light">RESPIRACIÓN Y CONSCIENCIA CORPORAL</span>
+              <span class="text-light">{{ service }}</span>
             </li>
           </ul>
         </div>
@@ -287,7 +221,7 @@
 
 <script>
 import Navbar from './Navbar.vue';
-import AboutMe from './AboutMe.vue';
+import quisoc from './quisoc.vue';
 import Formation from './Formation.vue';
 import Opinions from './Opinions.vue';
 import Contact from './Contact.vue';
@@ -304,7 +238,7 @@ export default {
   },
   components: {
     Navbar,
-    AboutMe,
+    quisoc,
     Formation,
     Opinions,
     Contact
@@ -312,7 +246,7 @@ export default {
   data() {
     return {
       scrollY: 0,
-      aboutVisible: false,
+      quisocVisible: false,
       portfolioVisible: false,
       ticking: false
     }
@@ -372,9 +306,9 @@ export default {
       const windowHeight = window.innerHeight;
       const scrollTop = this.scrollY;
       
-      if (this.$refs.aboutSection) {
-        const aboutTop = this.$refs.aboutSection.offsetTop;
-        this.aboutVisible = scrollTop + windowHeight > aboutTop + 100;
+      if (this.$refs.quisocSection) {
+        const aboutTop = this.$refs.quisocSection.offsetTop;
+        this.quisocVisible = scrollTop + windowHeight > aboutTop + 100;
       }
       
       if (this.$refs.portfolioSection) {
