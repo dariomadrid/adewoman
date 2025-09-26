@@ -14,7 +14,7 @@
         ref="heroBackground"
         src="/img/adw_mans.jpg"
         alt="Background hands"
-        class="absolute inset-0 w-full h-full object-cover will-change-transform transition-transform duration-75 ease-out"
+        class="absolute inset-0 w-full h-full object-cover will-change-transform transition-transform duration-75 ease-out blur-none opacity-90"
         style="z-index: 1; transform: translate3d(0, 0, 0) scale(1.1);"
         @error="onImageError"
         @load="onImageLoad"
