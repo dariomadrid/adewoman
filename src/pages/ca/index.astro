@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LandingPage from "../../components/LandingPage.vue";
+import { siteConfig } from "../../config/site.js";
+import { t } from "../../config/i18n.js";
+
+const currentLang = 'ca';
+const pageTitle = siteConfig.title[currentLang];
+---
+
+<Layout title={pageTitle}>
+  <div class="bg-white text-slate-800 min-h-screen" data-lang="ca">
+    <LandingPage client:load lang="ca" />
+  </div>
+</Layout>

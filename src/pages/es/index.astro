@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LandingPage from "../../components/LandingPage.vue";
+import { siteConfig } from "../../config/site.js";
+import { t } from "../../config/i18n.js";
+
+const currentLang = 'es'; // Set Spanish as default for this route
+const pageTitle = siteConfig.title.es || siteConfig.title.ca || siteConfig.name;
+---
+
+<Layout title={pageTitle}>
+  <div class="bg-white text-slate-800 min-h-screen" data-lang="es">
+    <LandingPage client:load lang="es" />
+  </div>
+</Layout>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
+    <!-- Simplified leopard head silhouette -->
+    <path d="M64 10 C85 10 102 25 108 45 C110 55 108 65 105 72 C115 78 118 85 115 95 C112 105 105 110 95 112 C90 125 75 130 64 130 C53 130 38 125 33 112 C23 110 16 105 13 95 C10 85 13 78 23 72 C20 65 18 55 20 45 C26 25 43 10 64 10 Z" />
+    <!-- Leopard spots pattern -->
+    <circle cx="55" cy="45" r="3" opacity="0.3"/>
+    <circle cx="73" cy="42" r="2.5" opacity="0.3"/>
+    <circle cx="48" cy="58" r="2" opacity="0.3"/>
+    <circle cx="80" cy="55" r="2.5" opacity="0.3"/>
+    <circle cx="60" cy="65" r="2" opacity="0.3"/>
+    <circle cx="70" cy="72" r="1.5" opacity="0.3"/>
+    <circle cx="58" cy="78" r="2" opacity="0.3"/>
+    
+    <style>
+        path { fill: #8B4513; }
+        circle { fill: #654321; }
+        @media (prefers-color-scheme: dark) {
+            path { fill: #D2691E; }
+            circle { fill: #8B4513; }
+        }
+    </style>
+</svg>

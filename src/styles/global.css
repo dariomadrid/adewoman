@@ -1,0 +1,837 @@
+@import "tailwindcss";
+
+/* CSS Custom Properties (Variables) */
+:root {
+  /* Font Variables */
+  --font-body: var(--font-barlow);
+  --font-heading: var(--font-barlow);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-hussar: 'Hussar Ekologiczny', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --font-barlow: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Typography Variables */
+  --text-base: 16px;
+  --text-base--line-height: 1.5;
+  
+  /* Spacing Variables */
+  --spacing: 0.25rem; /* 4px base unit */
+  
+  /* Color Variables */
+  --color-neutral-50: #FFFBFB;
+  --color-neutral-500: #8E560C;
+  --color-accent: #ffecba;
+  --color-accent-hover: #D5A668;
+  --color-accent-dark: #D5A668;
+  --color-primary: #8E560C;
+  --color-secondary: #eee4db;
+  --color-text: #2d3748;
+  --color-bg: #f5f5f5;
+  --color-gray-200: #e2e8f0;
+  --color-gray-600: #4a5568;
+  --color-input-border: #e2e8f0;
+  --color-heading: #2d3748;  
+  --color-dark: #2D2D2D;
+  --color-gray-light: #9CA3AF;
+  --color-footer: #133538;
+  --color-footer-orange: #AC7B39;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+  /* Semantic Color Utility Classes */
+  .text-primary {
+    color: var(--color-neutral-500) !important;
+  }
+
+  .text-light {
+    color: var(--color-neutral-50) !important;
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .text-accent-hover {
+    color: var(--color-accent-hover);
+  }
+
+  .text-dark {
+    color: var(--color-dark);
+  }
+
+  .text-gray-light {
+    color: var(--color-gray-light);
+  }
+
+  .text-white {
+    color: #ffffff;
+  }
+
+  .text-black {
+    color: #000000;
+  }
+
+  .bg-primary {
+    background-color: var(--color-neutral-500);
+  }
+
+  .bg-light {
+    background-color: var(--color-neutral-50);
+  }
+
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+
+  .bg-accent-dark {
+    background-color: var(--color-accent-dark);
+  }
+
+  .bg-dark {
+    background-color: var(--color-dark);
+  }
+
+  .bg-footer {
+    background-color: var(--color-footer);
+  }
+
+  .bg-footer-orange {
+    background-color: var(--color-footer-orange);
+  }
+
+  .text-footer-orange {
+    color: var(--color-footer-orange);
+  }
+
+  .border-accent {
+    border-color: var(--color-accent);
+  }
+
+  .bg-divider {
+    background-color: #C9A87A;
+  }
+
+  .border-accent-hover {
+    border-color: var(--color-accent-hover);
+  }
+
+  .placeholder-accent-hover::placeholder {
+    color: var(--color-accent-hover);
+  }
+
+  .focus\:border-primary:focus {
+    border-color: var(--color-neutral-500);
+  }
+
+  .focus\:ring-primary:focus {
+    --tw-ring-color: var(--color-neutral-500);
+  }
+
+  .hover\:bg-primary:hover {
+    background-color: var(--color-neutral-500);
+  }
+
+  .hover\:bg-accent-hover:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  .hover\:bg-tertiary:hover {
+    background-color: var(--color-tertiary);
+  }
+
+  .hover\:bg-tertiary-hover:hover {
+    background-color: var(--color-tertiary-hover);
+  }
+
+  .hover\:text-accent-hover:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .hover\:text-tertiary:hover {
+    color: var(--color-tertiary);
+  }
+
+  /* Font Utility Classes */
+  .font-hussar {
+    font-family: var(--font-hussar) !important;
+  }
+
+  .font-barlow {
+    font-family: var(--font-barlow) !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+  --tw-leading: calc(var(--spacing) * 7);
+  line-height: calc(var(--spacing) * 7);
+  color: #334155; /* slate-700 */
+}
+
+/* Apply Synonym Variable font globally to all elements */
+*, *::before, *::after {
+  font-family: var(--font-body);
+}
+
+/* Ensure all headings use Barlow font by default */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-barlow);
+  font-weight: 600; /* Medium weight for headings */
+}
+
+/* Hero slogan specific styling */
+.hero-slogan {
+  font-weight: 500 !important;
+}
+
+/* Hero title specific styling - use Hussar font */
+.hero-title {
+  font-family: var(--font-hussar) !important;
+  font-weight: normal !important;
+}
+
+/* Hero subtitle specific styling - use Barlow font */
+.hero-subtitle {
+  font-family: var(--font-barlow) !important;
+  font-weight: 300 !important;
+}
+
+/* Ensure all text elements use the custom font */
+p, span, div, a, button, input, textarea, label {
+  font-family: var(--font-body);
+}
+
+/* Override Tailwind's default font stack */
+.font-sans {
+  font-family: var(--font-body) !important;
+}
+
+/* Section styling */
+.section-with-pattern {
+  position: relative;
+  padding: 5rem 0;
+}
+
+/* Global section title styling */
+.section-title,
+h1, h2, h3, h4, h5, h6 {
+  color: #363636;
+}
+
+/* Footer headings override */
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+  color: #ffffff;
+}
+
+/* Hero section headings override */
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section h4,
+.hero-section h5,
+.hero-section h6 {
+  color: #ffffff !important;
+}
+
+/* Specific section title classes */
+.section-title {
+  color: #363636;
+  font-weight: 00;
+}
+
+/* Override any existing text colors for headings */
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
+  color: var(--color-black);
+}
+
+/* Decorative line under section titles */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background-color: #C9A87A;
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* Alternative sizes for the divider */
+.section-divider-sm {
+  width: 40px;
+  height: 2px;
+  background-color: #C9A87A;
+  margin: 0.75rem auto;
+  border-radius: 2px;
+}
+
+.section-divider-lg {
+  width: 80px;
+  height: 4px;
+  background-color: #C9A87A;
+  margin: 1.25rem auto;
+  border-radius: 2px;
+}
+
+/* Light webp background pattern */
+
+/* Parallax and Animation Styles */
+@layer base {
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Optimize elements for smooth animations */
+  .parallax-element {
+    will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  /* Hero section parallax optimizations */
+  .hero-section {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .hero-section img {
+    will-change: transform;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  /* Ultra-smooth parallax optimizations */
+  .will-change-transform {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    /* Use GPU compositing */
+    transform: translateZ(0);
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .will-change-transform {
+      transform: none !important;
+      will-change: auto;
+    }
+    
+    .hero-section img {
+      transform: none !important;
+    }
+  }
+
+  /* Fade in animations for sections */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Scroll-triggered animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Different animation variants */
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in.animate-in {
+    opacity: 1;
+  }
+
+  .animate-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-slide-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 0.6s ease-out forwards;
+  }
+
+  @keyframes slideUpFade {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-slide-right.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-scale-up {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-scale-up.animate-in {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Staggered animations for multiple elements */
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+  .stagger-5 { transition-delay: 0.5s; }
+}
+
+/* Component Styles */
+@layer components {
+  /* Base Button Styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem; /* rounded-xl - more subtle than fully rounded */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-barlow);
+    font-size: 1rem;
+    line-height: 1.5;
+    transform: scale(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: scale(1);
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-50);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    color: var(--color-primary);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-50);
+  }
+
+  .btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+  }
+
+  .btn-accent:hover {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-50);
+  }
+
+  .btn-accent-dark {
+    background-color: var(--color-accent-dark);
+    color: var(--color-neutral-50);
+  }
+
+  .btn-accent-dark:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+  }
+
+  .btn-dark {
+    background-color: var(--color-dark);
+    color: var(--color-neutral-50);
+  }
+
+  .btn-dark:hover {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-50);
+  }
+
+  /* Outline Button Variants */
+  .btn-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    box-shadow: none;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-50);
+  }
+
+  .btn-outline-accent {
+    background-color: transparent;
+    color: var(--color-accent-dark);
+    border: 2px solid var(--color-accent-dark);
+    box-shadow: none;
+  }
+
+  .btn-outline-accent:hover {
+    background-color: var(--color-accent-dark);
+    color: var(--color-neutral-50);
+  }
+
+  .btn-outline-light {
+    background-color: transparent;
+    color: var(--color-neutral-50);
+    border: 2px solid var(--color-neutral-50);
+    box-shadow: none;
+  }
+
+  .btn-outline-light:hover {
+    background-color: var(--color-neutral-50);
+    color: var(--color-primary);
+  }
+
+  /* Button Sizes */
+  .btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .btn-xl {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.25rem;
+  }
+
+  /* Button Width Variants */
+  .btn-full {
+    width: 100%;
+  }
+
+  /* Special Button Styles */
+  .btn-navbar-contact {
+    background-color: var(--color-accent-dark);
+    color: var(--color-primary);
+    border: 2px solid var(--color-accent-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-navbar-contact:hover {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-50);
+    border-color: var(--color-primary);
+  }
+
+  /* Navbar Menu Button Styles */
+  .btn-navbar-menu {
+    background-color: transparent !important;
+    color: var(--color-primary);
+    border: none;
+    box-shadow: none !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .btn-navbar-menu:hover {
+    background-color: transparent !important;
+    color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: none !important;
+  }
+
+  /* Visible Navbar Menu Button with subtle border */
+  .btn-navbar-visible {
+    background-color: var(--color-secondary); 
+    color: var(--color-primary);    
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    position: relative;
+    transition: all 0.3s ease;    
+  }
+
+  .btn-navbar-visible:hover {
+    background-color: var(--color-accent-hover) !important;
+    color: var(--color-neutral-50);
+  }
+
+  .btn-navbar-menu::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent-dark);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .btn-navbar-menu:hover::after {
+    width: 80%;
+  }
+
+  /* Mobile Navbar Menu Button */
+  .btn-mobile-menu {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: none;
+    box-shadow: none;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-mobile-menu::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
+
+  .btn-mobile-menu:hover::before {
+    width: 100%;
+  }
+
+  .btn-mobile-menu:hover {
+    color: var(--color-primary);
+    transform: translateX(8px);
+    background-color: transparent;
+  }
+
+  /* Navbar Logo Button */
+  .btn-navbar-logo {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: none;
+    box-shadow: none;
+    font-weight: 700;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-family: var(--font-hussar);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .btn-navbar-logo:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    transform: scale(1.02);
+  }
+
+  /* Contact Form Button */
+  .btn-contact {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+  }
+
+  .btn-contact:hover {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-50);
+  }
+
+  /* Carousel Navigation Buttons */
+  .btn-carousel {
+    background-color: var(--color-accent-dark);
+    color: var(--color-neutral-50);
+    border-radius: 50%;
+    padding: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-carousel:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+  }
+
+  .btn-carousel:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: scale(1);
+  }
+
+  .btn-carousel:disabled:hover {
+    background-color: var(--color-accent-dark);
+    color: var(--color-neutral-50);
+  }
+}
+
+/* Section styling */
+
+  .btn-navbar-contact:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(92, 59, 30, 0.2);
+  }
+
+  /* Navbar Menu Items Hover Effects */
+  .navbar-menu-item {
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+  }
+
+  .navbar-menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent-dark);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .navbar-menu-item:hover::after {
+    width: 100%;
+  }
+
+  .navbar-menu-item:hover {
+    color: var(--color-accent-hover);
+    transform: translateY(-1px);
+  }
+
+  /* Mobile Menu Items */
+  .mobile-menu-item {
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .mobile-menu-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
+
+  .mobile-menu-item:hover::before {
+    width: 100%;
+  }
+
+  .mobile-menu-item:hover {
+    color: var(--color-neutral-500);
+    transform: translateX(4px);
+  }
+
+  /* Footer social icons hover effect */
+  .footer-social-icon {
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+
+  .footer-social-icon:hover {
+    color: var(--color-accent) !important;
+  }
+
+  .footer-social-icon:hover svg {
+    color: var(--color-accent) !important;
+  }
+
+  /* Remove shadows from opinion cards */
+  .opinions-card {
+    box-shadow: none !important;
+  }
+
+  /* Force remove all shadows from opinion section */
+  [class*="bg-white"] {
+    box-shadow: none !important;
+  }
