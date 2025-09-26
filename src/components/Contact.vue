@@ -66,12 +66,12 @@
               <a :href="`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`" class="text-light hover:text-accent transition-colors transform hover:scale-110 duration-300">
                 <Phone class="w-6 h-6" />
               </a>
+              <a v-if="siteConfig.social?.whatsapp?.url" :href="siteConfig.social.whatsapp.url" target="_blank" class="text-light hover:text-accent transition-colors transform hover:scale-110 duration-300">
+                <MessageCircle class="w-6 h-6" />
+              </a>
               <a v-if="siteConfig.social?.instagram?.url" :href="siteConfig.social.instagram.url" target="_blank" class="text-light hover:text-accent transition-colors transform hover:scale-110 duration-300">
                 <Instagram class="w-6 h-6" />
-              </a>
-              <a v-if="siteConfig.social?.linkedin?.url" :href="siteConfig.social.linkedin.url" target="_blank" class="text-light hover:text-accent transition-colors transform hover:scale-110 duration-300">
-                <Linkedin class="w-6 h-6" />
-              </a>
+              </a>              
             </div>
           </div>
         </div>

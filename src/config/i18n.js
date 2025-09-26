@@ -148,15 +148,13 @@ export const translations = {
         ]
       },
       opinions: {
-        title: 'Proyectos que me enorgullecen',
-        subtitle: 'Mi portafolio',
-        viewAll: 'Ver todos los proyectos'
+        title: '¿QUÉ CUENTAN DE NOSOTROS?'
       }
     },
         
     // Contact
     contact: {
-      title: 'Contacta conmigo',
+      title: 'CONTACTA CONMIGO',
       description: 'Especialista en fisioterapia para la salud de la mujer. Reserva tu consulta y descubre cómo puedo ayudarte.',
       form: {
         name: 'Tu nombre',

@@ -32,8 +32,7 @@
   --color-heading: #2d3748;  
   --color-dark: #2D2D2D;
   --color-gray-light: #9CA3AF;
-  --color-footer: #133538;
-  --color-footer-orange: #AC7B39;
+  --color-footer: #805214;
   --color-black: #000000;
   --color-white: #FFFFFF;
 }
@@ -95,14 +94,6 @@
 
   .bg-footer {
     background-color: var(--color-footer);
-  }
-
-  .bg-footer-orange {
-    background-color: var(--color-footer-orange);
-  }
-
-  .text-footer-orange {
-    color: var(--color-footer-orange);
   }
 
   .border-accent {
@@ -617,8 +608,8 @@ section h6 {
 
   /* Visible Navbar Menu Button with subtle border */
   .btn-navbar-visible {
-    background-color: var(--color-secondary); 
-    color: var(--color-primary);    
+    background-color: var(--color-accent-hover); 
+    color: var(--color-neutral-50);    
     font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 0.75rem;
@@ -627,8 +618,8 @@ section h6 {
   }
 
   .btn-navbar-visible:hover {
-    background-color: var(--color-accent-hover) !important;
-    color: var(--color-neutral-50);
+    background-color: var(--color-secondary) !important;
+    color: var(--color-primary);
   }
 
   .btn-navbar-menu::after {

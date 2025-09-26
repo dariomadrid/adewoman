@@ -19,7 +19,7 @@ export const siteConfig = {
   // Contact information
   contact: {
     email: "info@adefisio.com",
-    phone: "+34 625 789 456",
+    phone: "+34 661 01 93 35",
     address: {
       street: "Carrer Marquès de Caldes de Montbuí, 62",
       city: "Girona",
@@ -35,10 +35,10 @@ export const siteConfig = {
       username: "@adewomanfisioterapia",
       label: "Instagram"
     },
-    linkedin: {
-      url: "https://linkedin.com/in/adewoman-fisioterapia",
-      username: "adewoman-fisioterapia",
-      label: "LinkedIn"
+    whatsapp: {
+      url: "https://wa.me/34661019335",
+      phone: "+34 661 01 93 35",
+      label: "WhatsApp"
     }
   },
   
@@ -118,34 +118,7 @@ export const siteConfig = {
     ogImage: "/og-image.jpg",
     twitterCard: "summary_large_image"
   },
-  
-  // Theme and styling
-  theme: {
-    primaryColor: "#2D5A87",
-    accentColor: "#68A0C4",
-    backgroundColor: "#F8FAFB"
-  },
-  
-  // Contact form configuration
-  forms: {
-    contact: {
-      subjects: [
-        "Consulta General",
-        "Primera Visita",
-        "Dolor Muscular",
-        "Rehabilitació",
-        "Teràpia Manual",
-        "Altres"
-      ],
-      scheduleOptions: [
-        "Matí (9:00 - 13:00)",
-        "Tarda (15:00 - 19:00)",
-        "Vespre (19:00 - 21:00)",
-        "Cap de setmana",
-        "Flexible"
-      ]
-    }
-  }
+
 };
 
 // Helper functions

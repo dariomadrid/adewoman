@@ -2,11 +2,6 @@
   <section class="py-12 md:py-20 px-4 md:px-8 bg-accent relative animate-on-scroll">
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-16 text-primary animate-on-scroll stagger-1">{{ t('home.opinions.title') }}</h2>
-      
-      <!-- Debug info (remove after testing) -->
-      <div class="mb-4 text-sm text-primary/70">
-        Screen: {{ windowWidth }}px | Items: {{ itemsPerSlide }} | Slide: {{ currentSlide + 1 }}/{{ totalSlides }}
-      </div>
             
       <!-- Carousel Container -->
       <div class="relative w-full animate-on-scroll stagger-2">
@@ -217,7 +212,6 @@ export default {
       } else {
         items = 3;
       }
-      console.log('Window width:', this.windowWidth, 'Items per slide:', items);
       return items;
     },
     slideWidth() {
@@ -273,13 +267,11 @@ export default {
       });
     },
     nextSlide() {
-      console.log('Next slide clicked. Current:', this.currentSlide, 'Max:', this.maxSlide);
       if (this.currentSlide < this.maxSlide) {
         this.currentSlide++;
       }
     },
     previousSlide() {
-      console.log('Previous slide clicked. Current:', this.currentSlide);
       if (this.currentSlide > 0) {
         this.currentSlide--;
       }
@@ -309,7 +301,6 @@ export default {
     },
     openOpinion(opinion) {
       // Handle opinion opening - could navigate to detail page or open modal
-      console.log('Opening opinion:', opinion);
       this.$emit('opinion-selected', opinion);
     },
     viewAllOpinions() {
