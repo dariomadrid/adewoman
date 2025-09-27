@@ -7,10 +7,10 @@
         <!-- Logo -->
         <div class="mb-8">
           <div class="flex items-center space-x-2">
-            <h1 class="font-hussar text-3xl md:text-4xl lg:text-5xl font-medium tracking-wider text-light">
+            <h1 class="font-hussar text-2xl md:text-3xl lg:text-4xl font-medium tracking-wider text-light">
               {{ t('home.hero.title') }}
             </h1>
-            <h2 class="font-barlow text-lg md:text-xl lg:text-2xl font-light tracking-widest text-light">
+            <h2 class="font-barlow text-base md:text-lg lg:text-xl font-light tracking-widest text-light">
               {{ t('home.hero.subtitle') }}
             </h2>
           </div>
@@ -25,9 +25,10 @@
           
           <!-- Location and Contact Section -->
           <div class="text-left col-span-1 sm:col-span-2 lg:col-span-1">
-            <h3 class="font-barlow text-sm sm:text-base md:text-lg font-medium mb-4 text-light">
+            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-medium mb-4 text-light">
               {{ t('footer.contact.location') }}
             </h3>
+            <div class="w-16 h-0.5 bg-white mb-6"></div>
             
             <div class="space-y-3 mb-6">
               <div class="flex items-start">
@@ -37,17 +38,22 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm leading-relaxed">
+                  <a 
+                    :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.contact.address.street + ', ' + siteConfig.contact.address.city + ', ' + siteConfig.contact.address.postalCode)}`"
+                    target="_blank"
+                    class="text-sm sm:text-base leading-relaxed hover:underline transition-all"
+                  >
                     <span class="underline">{{ siteConfig.contact.address.street }}</span><br>
                     <span class="underline">{{ siteConfig.contact.address.city }}, {{ siteConfig.contact.address.postalCode }}</span>
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>
 
-            <h3 class="font-barlow text-sm sm:text-base md:text-lg font-medium mb-4 text-light">
+            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-medium mb-4 text-light">
               {{ t('footer.contact.title') }}
             </h3>
+            <div class="w-16 h-0.5 bg-white mb-6"></div>
             
             <div class="space-y-3">
                             <div class="flex items-start">
@@ -59,7 +65,7 @@
                 <div>
                   <a 
                     :href="`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`"
-                    class="text-sm hover:underline transition-all"
+                    class="text-sm sm:text-base hover:underline transition-all"
                   >
                     {{ siteConfig.contact.phone }}
                   </a>
@@ -94,7 +100,7 @@
                 <div>
                   <a 
                     :href="`mailto:${siteConfig.contact.email}`"
-                    class="text-sm hover:underline transition-all break-words"
+                    class="text-sm sm:text-base hover:underline transition-all break-words"
                   >
                     {{ siteConfig.contact.email }}
                   </a>
@@ -122,39 +128,41 @@
 
           <!-- Schedule Section -->
           <div class="text-left">
-            <h3 class="font-barlow text-sm sm:text-base md:text-lg font-medium mb-4 text-light">
+            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-normal mb-4 text-light">
               {{ t('footer.schedule.title') }}
             </h3>
+            <div class="w-16 h-0.5 bg-white mb-6"></div>
             
             <div class="space-y-3">
               <div>
-                <p class="text-sm font-normal mb-1">{{ t('footer.schedule.weekdays') }}</p>
-                <p class="text-sm">{{ t('footer.schedule.weekdaysTime') }}</p>
+                <p class="text-sm sm:text-base font-normal mb-1">{{ t('footer.schedule.weekdays') }}</p>
+                <p class="text-sm sm:text-base">{{ t('footer.schedule.weekdaysTime') }}</p>
               </div>
               
               <div>
-                <p class="text-sm font-normal mb-1">{{ t('footer.schedule.midweek') }}</p>
-                <p class="text-sm">{{ t('footer.schedule.midweekTime') }}</p>
+                <p class="text-sm sm:text-base font-normal mb-1">{{ t('footer.schedule.midweek') }}</p>
+                <p class="text-sm sm:text-base">{{ t('footer.schedule.midweekTime') }}</p>
               </div>
               
               <div>
-                <p class="text-sm font-normal mb-1">{{ t('footer.schedule.weekend') }}</p>
-                <p class="text-sm">{{ t('footer.schedule.closed') }}</p>
+                <p class="text-sm sm:text-base font-normal mb-1">{{ t('footer.schedule.weekend') }}</p>
+                <p class="text-sm sm:text-base">{{ t('footer.schedule.closed') }}</p>
               </div>
             </div>
           </div>
 
           <!-- Legal Links Section -->
           <div class="text-left">
-            <h3 class="font-barlow text-sm sm:text-base md:text-lg font-medium mb-4 text-light">
+            <h3 class="font-barlow text-lg sm:text-xl md:text-2xl font-medium mb-4 text-light">
               {{ t('footer.legal.title') }}
             </h3>
+            <div class="w-16 h-0.5 bg-white mb-6"></div>
             
             <div class="space-y-3">
               <div>
                 <a 
                   href="#" 
-                  class="text-sm hover:underline transition-all block"
+                  class="text-base sm:text-lg hover:underline transition-all block"
                 >
                   {{ t('footer.legal.privacy') }}
                 </a>
@@ -163,7 +171,7 @@
               <div>
                 <a 
                   href="#" 
-                  class="text-sm hover:underline transition-all block"
+                  class="text-base sm:text-lg hover:underline transition-all block"
                 >
                   {{ t('footer.legal.terms') }}
                 </a>
@@ -172,7 +180,7 @@
               <div>
                 <a 
                   href="#" 
-                  class="text-sm hover:underline transition-all block"
+                  class="text-base sm:text-lg hover:underline transition-all block"
                 >
                   {{ t('footer.legal.cookies') }}
                 </a>
@@ -181,7 +189,7 @@
               <div>
                 <a 
                   href="#" 
-                  class="text-sm hover:underline transition-all block"
+                  class="text-base sm:text-lg hover:underline transition-all block"
                 >
                   {{ t('footer.legal.notice') }}
                 </a>
