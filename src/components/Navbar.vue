@@ -1,20 +1,16 @@
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 bg-transparent">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex justify-between items-center">
-        
-        <!-- Logo - Always visible -->
-        <div class="flex items-center">
-          <a 
-            href="/"
-            :class="[
-              'flex items-center justify-center font-hussar text-sm md:text-base font-medium tracking-wider hover:text-accent-hover transition-all duration-300 cursor-pointer',
-              isScrolled ? 'bg-light text-dark px-4 py-2 rounded-lg shadow-sm' : 'text-light px-4 py-2'
-            ]"
-          >
-            AW <span class="font-barlow text-sm md:text-base font-light tracking-widest ml-2">ADEWOMAN</span>
-          </a>
-        </div>
+    <div class="flex justify-between items-center px-4">
+      
+      <!-- Logo - Always visible with prominent design -->
+      <div class="flex items-center">
+        <a 
+          href="/"
+          class="flex items-center justify-start font-hussar text-xl md:text-2xl lg:text-3xl font-bold tracking-wider hover:text-accent-hover transition-all duration-300 cursor-pointer text-light"
+        >
+          AW <span class="font-barlow text-xl md:text-2xl lg:text-3xl font-semibold tracking-widest ml-2">ADEWOMAN</span>
+        </a>
+      </div>
         
         <!-- Hamburger menu button with text and light background - Always visible -->
         <button
@@ -96,7 +92,6 @@
               Català
             </a>
           </div>
-        </div>
       </div>
     </div>
   </header>

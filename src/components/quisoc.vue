@@ -6,7 +6,7 @@
       <div class="order-1 md:order-1">
         <div class="relative w-full h-full">
           <img 
-            src="/img/adw_aw.jpg" 
+            src="/img/sessio/2.jpg" 
             alt="Jéssica González Sánchez - Fisioterapeuta especialista en salud femenina"
             class="w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] max-h-[800px] object-cover"
           />

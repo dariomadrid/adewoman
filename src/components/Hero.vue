@@ -2,17 +2,20 @@
   <section
     id="heroSection"
     ref="heroSection"
-    class="hero-section relative min-h-screen flex items-start justify-center bg-gray-800 pt-32 overflow-hidden"
+    class="hero-section relative min-h-screen flex items-end justify-center bg-gray-800 pb-16 overflow-hidden"
   >
-    <!-- Background Image with smooth parallax -->
-    <img 
+    <!-- Background Video with smooth parallax -->
+    <video 
       ref="heroBackground"
-      src="/img/adw_mans.jpg"
-      alt="Background hands"
+      src="/videos/jess_portada_compressed.mov"
+      autoplay
+      muted
+      loop
+      playsinline
       class="absolute inset-0 w-full h-full object-cover will-change-transform transition-transform duration-75 ease-out blur-none opacity-90"
       style="z-index: 1; transform: translate3d(0, 0, 0) scale(1.1);"
-      @error="onImageError"
-      @load="onImageLoad"
+      @error="onVideoError"
+      @loadeddata="onVideoLoad"
     />
     
     <!-- Content Container with subtle parallax -->
@@ -22,11 +25,11 @@
       style="z-index: 3; transform: translate3d(0, 0, 0); opacity: 1;"
     >
       <!-- Main Logo/Title -->
-      <div class="mb-8 mt-20">
-        <h1 class="font-hussar text-8xl md:text-9xl lg:text-[12rem] font-bold tracking-wider text-white">
+      <div class="mb-8">
+        <h1 class="font-hussar text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider text-white">
           {{ t('home.hero.title') }}
         </h1>
-        <h2 class="font-barlow text-4xl md:text-6xl lg:text-7xl font-light tracking-widest mt-2 text-white">
+        <h2 class="font-barlow text-2xl md:text-4xl lg:text-5xl font-light tracking-widest mt-2 text-white">
           {{ t('home.hero.subtitle') }}
         </h2>
       </div>
@@ -54,8 +57,8 @@ export default {
     currentLang() {
       return this.lang || getCurrentLang();
     },
-    heroImageUrl() {
-      return `${import.meta.env.BASE_URL || '/'}adw_mans.jpg`.replace('//', '/');
+    heroVideoUrl() {
+      return `${import.meta.env.BASE_URL || '/'}videos/jess_portada.mov`.replace('//', '/');
     }
   },
   mounted() {
@@ -93,12 +96,12 @@ export default {
         }
       }
     },
-    onImageError(event) {
-      console.error('Image failed to load:', event.target.src);
+    onVideoError(event) {
+      console.error('Video failed to load:', event.target.src);
       const fallbacks = [
-        '/img/adw_mans.jpg',
-        'http://localhost:4321/adw_mans.jpg',
-        '../../../public/img/adw_mans.jpg'
+        '/videos/jess_portada_compressed.mov',
+        'http://localhost:4321/videos/jess_portada_compressed.mov',
+        '../../../public/videos/jess_portada_compressed.mov'
       ];
       
       const currentSrc = event.target.src;
@@ -106,11 +109,17 @@ export default {
       if (currentIndex < fallbacks.length - 1) {
         event.target.src = fallbacks[currentIndex + 1];
       } else {
-        event.target.style.display = 'none';
+        // If video fails, fallback to the original image
+        const img = document.createElement('img');
+        img.src = '/img/adw_mans.jpg';
+        img.className = event.target.className;
+        img.style.cssText = event.target.style.cssText;
+        event.target.parentNode.replaceChild(img, event.target);
+        this.$refs.heroBackground = img;
       }
     },
-    onImageLoad(event) {
-      console.log('Image loaded successfully:', event.target.src);
+    onVideoLoad(event) {
+      console.log('Video loaded successfully:', event.target.src);
     }
   }
 }
@@ -122,6 +131,11 @@ export default {
   min-height: 100vh;
   position: relative;
   background-color: #4a5568;
+}
+
+/* Video opacity */
+.hero-section video {
+  opacity: 0.7;
 }
 
 /* Ensure proper z-index layering */
