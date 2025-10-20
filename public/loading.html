@@ -1,16 +1,10 @@
----
-const pageTitle = "ADEWOMAN FISIOTERÀPIA";
----
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{pageTitle}</title>
+  <title>ADEWOMAN FISIOTERÀPIA - Carregant...</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="/ca/">
   <style>
     body {
       margin: 0;
@@ -32,11 +26,6 @@ const pageTitle = "ADEWOMAN FISIOTERÀPIA";
       font-weight: 600;
       margin-bottom: 1rem;
       opacity: 0.9;
-    }
-    .subtitle {
-      font-size: 1rem;
-      opacity: 0.7;
-      margin-bottom: 2rem;
     }
     .spinner {
       border: 3px solid rgba(255, 255, 255, 0.3);
@@ -60,13 +49,14 @@ const pageTitle = "ADEWOMAN FISIOTERÀPIA";
 <body>
   <div class="loading-container">
     <div class="loading-text">Carregant...</div>
-    <div class="subtitle">ADEWOMAN FISIOTERÀPIA</div>
     <div class="spinner"></div>
   </div>
   
   <script>
-    // Immediate redirect to avoid showing the default Astro message
-    window.location.href = '/ca/';
+    // Redirect to the main site after a short delay
+    setTimeout(() => {
+      window.location.href = '/ca/';
+    }, 1500);
   </script>
 </body>
 </html>
