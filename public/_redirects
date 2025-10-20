@@ -1,3 +1,3 @@
 # Netlify redirects file
-# Redirect root to Catalan version
-/ /ca/ 302
+# Let the index.astro handle the root redirect with custom loading
+# /  /ca/  302

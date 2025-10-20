@@ -9,14 +9,8 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   integrations: [vue()],
   
-  i18n: {
-    defaultLocale: 'ca',
-    locales: ['ca', 'es'],
-    routing: {
-      prefixDefaultLocale: true
-    }
-  },
-
+  // Removed i18n configuration to prevent automatic redirects
+  
   vite: {
     plugins: [tailwindcss()],
     resolve: {
