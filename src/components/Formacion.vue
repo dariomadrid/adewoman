@@ -21,7 +21,7 @@
       <div class="flex justify-center md:justify-end order-1 md:order-2 items-center">
         <div class="relative w-full max-w-md md:max-w-none h-full">
           <img 
-            src="/img/adw_formacio.jpg" 
+            src="/img/sessio/3.jpg" 
             alt="Fisioterapeuta especialista en salud femenina"
             class="w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] max-h-[800px] object-cover rounded-3xl shadow-2xl border-8 border-white"
           />

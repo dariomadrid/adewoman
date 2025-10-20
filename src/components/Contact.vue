@@ -2,14 +2,20 @@
   <section id="contact" class="bg-accent-dark animate-on-scroll">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
       
-      <!-- Left Image (50% width) -->
-      <div class="order-1 md:order-1 animate-on-scroll animate-slide-left">
+      <!-- Left Google Maps (50% width) -->
+      <div class="order-1 md:order-1 animate-on-scroll animate-slide-left h-full">
         <div class="relative w-full h-full">
-          <img 
-            src="/img/adw_print.jpg" 
-            alt="Jess - Adewoman Fisioterapia - Contacto"
-            class="w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] max-h-[800px] object-cover"
-          />
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.4268574282647!2d2.8193313153123077!3d41.979407179218896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae72f0b1e2b51%3A0x8f8b0f9e7a7f8f9f!2sCarrer%20Marqu%C3%A8s%20de%20Caldes%20de%20Montbu%C3%AD%2C%2062%2C%2017003%20Girona%2C%20Spain!5e0!3m2!1sen!2sus!4v1698000000000!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            class="w-full h-full absolute inset-0 rounded-lg"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de ADEWOMAN - Carrer Marquès de Caldes de Montbuí, 62, Girona"
+          ></iframe>
         </div>
       </div>
 
@@ -82,7 +88,7 @@
 </template>
 
 <script>
-import { ref, reactive, onMounted, onBeforeUnmount } from 'vue';
+import { ref, reactive, computed, onMounted, onBeforeUnmount } from 'vue';
 import { Mail, Phone, MessageCircle, Instagram, Linkedin } from 'lucide-vue-next';
 import { siteConfig } from '../config/site.js';
 import { getCurrentLang, t } from '../config/i18n.js';
@@ -150,6 +156,13 @@ export default {
       window.removeEventListener('languageChanged', handleLanguageChange);
     });
 
+    // Simple Google Maps embed URL
+    const googleMapsEmbedUrl = computed(() => {
+      const address = "Carrer Marquès de Caldes de Montbuí, 62, Girona 17003";
+      const encodedAddress = encodeURIComponent(address);
+      return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.0!2d2.8214!3d41.9794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDU4JzQ1LjgiTiAywrA0OScxNy4wIkU!5e0!3m2!1ses!2ses!4v1000000000000!5m2!1ses!2ses&q=${encodedAddress}`;
+    });
+
     return {
       currentLang,
       siteConfig,
@@ -158,6 +171,7 @@ export default {
       submitMessage,
       submitMessageClass,
       handleSubmit,
+      googleMapsEmbedUrl,
       t: (key) => t(key, currentLang.value)
     };
   }

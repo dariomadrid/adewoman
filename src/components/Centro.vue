@@ -24,9 +24,9 @@
       <div class="flex justify-center md:justify-end order-2 md:order-2">
         <div class="relative w-full max-w-md md:max-w-lg">
           <img 
-            src="/img/sessio/3_1g.jpg" 
+            src="/img/sessio/4.jpg" 
             alt="Centro especializado en fisioterapia para la mujer"
-            class="w-full h-auto min-h-[400px] md:min-h-[500px] lg:min-h-[600px] max-h-[700px] object-cover rounded-3xl shadow-2xl"
+            class="w-full h-auto min-h-[400px] md:min-h-[500px] lg:min-h-[600px] max-h-[700px] object-cover rounded-3xl shadow-2xl border-8 border-white"
           />
         </div>
       </div>

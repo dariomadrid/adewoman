@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-footer text-light pt-12 pb-8 px-6">
-    <div class="max-w-6xl mx-auto">
+  <footer class="bg-footer text-light pt-12 pb-8 px-1">
+    <div class="max-w-7xl mx-auto">
       
       <!-- Main Brand and Social -->
       <div class="text-left mb-6">
@@ -17,23 +17,25 @@
         </div>
       </div>
 
-      <!-- Contact Information Grid and Button -->
-      <div class="flex flex-col lg:flex-row justify-between items-start mb-8 w-full">
+      <!-- Contact Information Grid with Positioned Button -->
+      <div class="relative mb-8 w-full">
         
-        <!-- Three Columns Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 flex-grow w-full max-w-none">
+        <!-- Four Columns Grid with Custom Widths -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 xl:gap-8 w-full pr-16 lg:pr-20"
+             style="grid-template-columns: 1fr; grid-template-columns: repeat(2, 1fr); grid-template-columns: 1fr 1fr 1fr 0.6fr;"
+        >
           
-          <!-- Location and Contact Section -->
-          <div class="text-left col-span-1 sm:col-span-2 lg:col-span-1">
-            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-medium mb-4 text-light">
+          <!-- Location Section -->
+          <div class="text-left">
+            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-medium mb-4 !text-gray-200">
               {{ t('footer.contact.location') }}
             </h3>
-            <div class="w-16 h-0.5 bg-white mb-6"></div>
+            <div class="w-16 h-0.5 bg-gray-600 mb-6"></div>
             
-            <div class="space-y-3 mb-6">
+            <div class="space-y-3">
               <div class="flex items-start">
                 <div class="mr-3 mt-1 flex-shrink-0">
-                  <svg class="w-4 h-4 text-light" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                   </svg>
                 </div>
@@ -41,31 +43,34 @@
                   <a 
                     :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.contact.address.street + ', ' + siteConfig.contact.address.city + ', ' + siteConfig.contact.address.postalCode)}`"
                     target="_blank"
-                    class="text-sm sm:text-base leading-relaxed hover:underline transition-all"
+                    class="text-sm text-gray-400 leading-relaxed hover:text-accent transition-all"
                   >
-                    <span class="underline">{{ siteConfig.contact.address.street }}</span><br>
-                    <span class="underline">{{ siteConfig.contact.address.city }}, {{ siteConfig.contact.address.postalCode }}</span>
+                    <span>{{ siteConfig.contact.address.street }}</span><br>
+                    <span>{{ siteConfig.contact.address.city }}, {{ siteConfig.contact.address.postalCode }}</span>
                   </a>
                 </div>
               </div>
             </div>
+          </div>
 
-            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-medium mb-4 text-light">
+          <!-- Contact Section -->
+          <div class="text-left">
+            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-medium mb-4 !text-gray-200">
               {{ t('footer.contact.title') }}
             </h3>
-            <div class="w-16 h-0.5 bg-white mb-6"></div>
+            <div class="w-16 h-0.5 bg-gray-600 mb-6"></div>
             
             <div class="space-y-3">
                             <div class="flex items-start">
                 <div class="mr-3 mt-1 flex-shrink-0">
-                  <svg class="w-4 h-4 text-light" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                   </svg>
                 </div>
                 <div>
                   <a 
                     :href="`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`"
-                    class="text-sm sm:text-base hover:underline transition-all"
+                    class="text-sm text-gray-400 hover:underline transition-all"
                   >
                     {{ siteConfig.contact.phone }}
                   </a>
@@ -75,7 +80,7 @@
               <!-- WhatsApp Contact -->
               <div class="flex items-start">
                 <div class="mr-3 mt-1 flex-shrink-0">
-                  <svg class="w-4 h-4 text-light" fill="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.488"/>
                   </svg>
                 </div>
@@ -83,7 +88,7 @@
                   <a 
                     :href="siteConfig.social.whatsapp.url" 
                     target="_blank"
-                    class="text-sm hover:underline transition-all"
+                    class="text-sm text-gray-400 hover:underline transition-all"
                   >
                     WhatsApp
                   </a>
@@ -92,7 +97,7 @@
               
               <div class="flex items-start">
                 <div class="mr-3 mt-1 flex-shrink-0">
-                  <svg class="w-4 h-4 text-light" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                   </svg>
@@ -100,7 +105,7 @@
                 <div>
                   <a 
                     :href="`mailto:${siteConfig.contact.email}`"
-                    class="text-sm sm:text-base hover:underline transition-all break-words"
+                    class="text-sm text-gray-400 hover:underline transition-all break-words"
                   >
                     {{ siteConfig.contact.email }}
                   </a>
@@ -109,7 +114,7 @@
 
               <div class="flex items-start">
                 <div class="mr-2 mt-1">
-                  <svg class="w-3 h-3 text-light" fill="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-3 h-3 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
                 </div>
@@ -117,7 +122,7 @@
                   <a 
                     :href="siteConfig.social.instagram.url" 
                     target="_blank"
-                    class="text-sm hover:underline transition-all"
+                    class="text-sm text-gray-400 hover:underline transition-all"
                   >
                     {{ siteConfig.social.instagram.username }}
                   </a>
@@ -128,41 +133,47 @@
 
           <!-- Schedule Section -->
           <div class="text-left">
-            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-normal mb-4 text-light">
+            <h3 class="font-barlow text-base sm:text-lg md:text-xl font-normal mb-4 !text-gray-200">
               {{ t('footer.schedule.title') }}
             </h3>
-            <div class="w-16 h-0.5 bg-white mb-6"></div>
+            <div class="w-16 h-0.5 bg-gray-600 mb-6"></div>
             
             <div class="space-y-3">
               <div>
-                <p class="text-sm sm:text-base font-normal mb-1">{{ t('footer.schedule.weekdays') }}</p>
-                <p class="text-sm sm:text-base">{{ t('footer.schedule.weekdaysTime') }}</p>
+                <p class="text-sm text-gray-400">
+                  <span class="font-normal">{{ t('footer.schedule.weekdays') }}</span>:
+                  <span class="ml-2">{{ t('footer.schedule.weekdaysTime') }}</span>
+                </p>
               </div>
               
               <div>
-                <p class="text-sm sm:text-base font-normal mb-1">{{ t('footer.schedule.midweek') }}</p>
-                <p class="text-sm sm:text-base">{{ t('footer.schedule.midweekTime') }}</p>
+                <p class="text-sm text-gray-400">
+                  <span class="font-normal">{{ t('footer.schedule.midweek') }}</span>:
+                  <span class="ml-2">{{ t('footer.schedule.midweekTime') }}</span>
+                </p>
               </div>
               
               <div>
-                <p class="text-sm sm:text-base font-normal mb-1">{{ t('footer.schedule.weekend') }}</p>
-                <p class="text-sm sm:text-base">{{ t('footer.schedule.closed') }}</p>
+                <p class="text-sm text-gray-400">
+                  <span class="font-normal">{{ t('footer.schedule.weekend') }}</span>:
+                  <span class="ml-2">{{ t('footer.schedule.closed') }}</span>
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- Legal Links Section -->
+          <!-- Legal Links Section (Compact) -->
           <div class="text-left">
-            <h3 class="font-barlow text-lg sm:text-xl md:text-2xl font-medium mb-4 text-light">
+            <h3 class="font-barlow text-sm sm:text-base lg:text-lg font-medium mb-3 !text-gray-200">
               {{ t('footer.legal.title') }}
             </h3>
-            <div class="w-16 h-0.5 bg-white mb-6"></div>
+            <div class="w-12 h-0.5 bg-gray-600 mb-4"></div>
             
-            <div class="space-y-3">
+            <div class="space-y-2">
               <div>
                 <a 
                   href="#" 
-                  class="text-base sm:text-lg hover:underline transition-all block"
+                  class="text-sm text-gray-400 hover:underline transition-all block"
                 >
                   {{ t('footer.legal.privacy') }}
                 </a>
@@ -171,7 +182,7 @@
               <div>
                 <a 
                   href="#" 
-                  class="text-base sm:text-lg hover:underline transition-all block"
+                  class="text-sm text-gray-400 hover:underline transition-all block"
                 >
                   {{ t('footer.legal.terms') }}
                 </a>
@@ -180,7 +191,7 @@
               <div>
                 <a 
                   href="#" 
-                  class="text-base sm:text-lg hover:underline transition-all block"
+                  class="text-sm text-gray-400 hover:underline transition-all block"
                 >
                   {{ t('footer.legal.cookies') }}
                 </a>
@@ -189,7 +200,7 @@
               <div>
                 <a 
                   href="#" 
-                  class="text-base sm:text-lg hover:underline transition-all block"
+                  class="text-sm text-gray-400 hover:underline transition-all block"
                 >
                   {{ t('footer.legal.notice') }}
                 </a>
@@ -199,8 +210,8 @@
 
         </div>
 
-        <!-- Button on the Right -->
-        <div class="mt-4 md:mt-0 md:ml-6 flex-shrink-0">
+        <!-- Button Positioned on the Right (Desktop) -->
+        <div class="absolute top-0 right-0 hidden lg:block">
           <button 
             @click="scrollToTop" 
             class="bg-accent-dark hover:bg-accent text-white rounded-full p-3 xl:p-4 transition-all duration-300 hover:scale-110 inline-flex items-center justify-center cursor-pointer"
@@ -212,6 +223,29 @@
           </button>
         </div>
 
+      </div>
+
+      <!-- Mobile Button (Centered) -->
+            <!-- Mobile Button (Centered) -->
+      <div class="flex justify-center mb-8 lg:hidden">
+        <button 
+          @click="scrollToTop" 
+          class="bg-accent-dark hover:bg-accent text-white rounded-full p-3 transition-all duration-300 hover:scale-110 inline-flex items-center justify-center cursor-pointer"
+          :aria-label="t('common.backToTop')"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Copyright Section -->
+      <div class="border-t border-gray-400 pt-6">
+        <div class="text-right">
+          <p class="text-sm text-gray-400">
+            © 2025 {{ t('home.hero.title') }}. {{ t('footer.copyright') }}
+          </p>
+        </div>
       </div>
 
     </div>
