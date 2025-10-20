@@ -243,7 +243,7 @@
       <div class="border-t border-gray-400 pt-6">
         <div class="text-right">
           <p class="text-sm text-gray-400">
-            © 2025 {{ t('home.hero.title') }}. {{ t('footer.copyright') }}
+            © 2025 {{ t('home.hero.title') }} {{ t('home.hero.subtitle') }}. {{ t('footer.copyright') }}
           </p>
         </div>
       </div>
