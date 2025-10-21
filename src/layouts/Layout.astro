@@ -4,12 +4,13 @@ import Footer from '../components/Footer.vue'
 
 export interface Props {
 	title: string;
+	currentLang?: string;
 }
 
 const { title } = Astro.props;
 
-// Get language from URL
-const currentLang = Astro.currentLocale || 'ca';
+// Get language from props or URL
+const currentLang = Astro.props.currentLang || Astro.currentLocale || 'ca';
 ---    
 
 <!doctype html>

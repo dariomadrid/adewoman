@@ -8,7 +8,7 @@ const currentLang = 'ca';
 const pageTitle = siteConfig.title[currentLang];
 ---
 
-<Layout title={pageTitle}>
+<Layout title={pageTitle} currentLang={currentLang}>
   <div class="bg-white text-slate-800 min-h-screen" data-lang="ca">
     <LandingPage client:load lang="ca" />
   </div>

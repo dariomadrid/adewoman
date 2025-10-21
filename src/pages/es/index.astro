@@ -8,7 +8,7 @@ const currentLang = 'es'; // Set Spanish as default for this route
 const pageTitle = siteConfig.title.es || siteConfig.title.ca || siteConfig.name;
 ---
 
-<Layout title={pageTitle}>
+<Layout title={pageTitle} currentLang={currentLang}>
   <div class="bg-white text-slate-800 min-h-screen" data-lang="es">
     <LandingPage client:load lang="es" />
   </div>

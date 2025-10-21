@@ -26,7 +26,9 @@
             {{ t('contact.title') }}
           </h2>
        
-          <form @submit.prevent="handleSubmit" class="space-y-4">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
             <input
               v-model="form.name"
               type="text"

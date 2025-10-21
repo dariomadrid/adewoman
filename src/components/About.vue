@@ -3,8 +3,8 @@
   <section id="about" class="py-16 px-6 bg-accent-dark animate-on-scroll">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
       
-      <!-- Left Content -->
-      <div class="text-light order-2 md:order-1 text-justify animate-on-scroll animate-slide-left">
+  <!-- Left Content -->
+  <div class="text-light order-2 md:order-1 text-justify animate-on-scroll animate-slide-left flex flex-col justify-center h-full">
         <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-5xl font-bold mb-8 animate-on-scroll stagger-1">
           {{ t('home.about.title') }}
         </h2>
@@ -13,19 +13,19 @@
           {{ t('home.about.subtitle') }}
         </h4>
         
-  <p class="text-xl md:text-1xl mb-6">
+  <p class="text-xl md:text-1xl mb-6 text-justify">
           {{ t('home.about.intro') }}
         </p>
         
-  <p class="text-xl md:text-1xl mb-6 leading-relaxed">
+  <p class="text-xl md:text-1xl mb-6 leading-relaxed text-justify">
           {{ t('home.about.introDescription1') }}
         </p>
         
-  <p class="text-xl md:text-1xl mb-6 leading-relaxed">
+  <p class="text-xl md:text-1xl mb-6 leading-relaxed text-justify">
           {{ t('home.about.introDescription2') }}
         </p>
         
-  <p class="text-xl md:text-1xl leading-relaxed">
+  <p class="text-xl md:text-1xl leading-relaxed text-justify">
           {{ t('home.about.introConclusion') }}
         </p>
       </div>
