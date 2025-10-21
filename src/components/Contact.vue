@@ -32,6 +32,7 @@
             <input
               v-model="form.name"
               type="text"
+              name="name"
               :placeholder="t('contact.form.name')"
               required
               class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
@@ -39,12 +40,14 @@
             <input
               v-model="form.email"
               type="email"
+              name="email"
               :placeholder="t('contact.form.email')"
               required
               class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
             />
             <textarea
               v-model="form.message"
+              name="message"
               :placeholder="t('contact.form.message')"
               rows="4"
               required
@@ -129,7 +132,7 @@ export default {
         form.email = '';
         form.message = '';
         
-        submitMessage.value = t('contact.form.success');
+  submitMessage.value = t('contact.success');
         submitMessageClass.value = 'bg-green-100 text-green-800 border border-green-300';
         
         // Clear success message after 5 seconds
