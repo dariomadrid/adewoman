@@ -82,7 +82,7 @@ export const translations = {
         
     // Contact
     contact: {
-      title: 'CONTACTA AMB MI',
+      title: 'CONTACTA',
       form: {
         name: 'El teu nom',
         email: 'El teu correu electrònic',
@@ -98,8 +98,8 @@ export const translations = {
     // Footer
     footer: {
       contact: {
-        title: 'Contacta\'ns',
-        location: 'ON SÓM'
+        title: 'CONTACTA',
+        location: 'UBICACIÓ'
       },
       schedule: {
         title: 'HORARI',
@@ -212,7 +212,7 @@ export const translations = {
         
     // Contact
     contact: {
-      title: 'CONTACTA CONMIGO',
+      title: 'CONTACTA',
       form: {
         name: 'Tu nombre',
         email: 'Tu correo electrónico',
@@ -228,8 +228,8 @@ export const translations = {
     // Footer
     footer: {
       contact: {
-        title: 'Contáctanos',
-        location: 'DÓNDE ESTAMOS'
+        title: 'CONTACTA',
+        location: 'UBICACIÓN'
       },
       schedule: {
         title: 'HORARIO',

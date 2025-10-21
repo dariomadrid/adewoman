@@ -1,0 +1,3 @@
+# Netlify redirects file
+# Let the index.astro handle the root redirect with custom loading
+# /  /ca/  302

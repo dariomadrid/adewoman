@@ -57,6 +57,7 @@ import WhyChooseUs from './WhyChooseUs.vue';
 import Centro from './Centro.vue';
 import Opinions from './Opinions.vue';
 import Contact from './Contact.vue';
+import Footer from './Footer.vue';
 import { t, getCurrentLang } from '../config/i18n.js';
 import { siteConfig } from '../config/site.js';
 
@@ -77,7 +78,8 @@ export default {
     WhyChooseUs,
     Centro,
     Opinions,
-    Contact
+    Contact,
+    Footer
   },
   data() {
     return {

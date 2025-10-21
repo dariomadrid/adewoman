@@ -5,7 +5,7 @@
       
       <!-- Left Content -->
       <div class="text-light order-2 md:order-1 flex flex-col justify-center pl-5">
-        <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+        <h2 class="font-barlow text-light text-2xl md:text-3xl lg:text-5xl font-bold mb-8">
           {{ t('home.formacio.title') }}
         </h2>
         

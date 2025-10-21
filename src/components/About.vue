@@ -5,7 +5,7 @@
       
       <!-- Left Content -->
       <div class="text-light order-2 md:order-1 text-justify animate-on-scroll animate-slide-left">
-        <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-6xl font-bold mb-8 animate-on-scroll stagger-1">
+        <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-5xl font-bold mb-8 animate-on-scroll stagger-1">
           {{ t('home.about.title') }}
         </h2>
         
@@ -13,19 +13,19 @@
           {{ t('home.about.subtitle') }}
         </h4>
         
-        <p class="text-xl md:text-2xl mb-6">
+  <p class="text-xl md:text-1xl mb-6">
           {{ t('home.about.intro') }}
         </p>
         
-        <p class="text-xl md:text-2xl mb-6 leading-relaxed">
+  <p class="text-xl md:text-1xl mb-6 leading-relaxed">
           {{ t('home.about.introDescription1') }}
         </p>
         
-        <p class="text-xl md:text-2xl mb-6 leading-relaxed">
+  <p class="text-xl md:text-1xl mb-6 leading-relaxed">
           {{ t('home.about.introDescription2') }}
         </p>
         
-        <p class="text-xl md:text-2xl leading-relaxed">
+  <p class="text-xl md:text-1xl leading-relaxed">
           {{ t('home.about.introConclusion') }}
         </p>
       </div>

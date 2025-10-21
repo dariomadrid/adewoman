@@ -1,33 +1,39 @@
 <template>
   <section id="centro-especializado" class="py-16 px-6 bg-accent-dark animate-on-scroll">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+    <div class="max-w-7xl mx-auto">
       
-      <!-- Left Content -->
-      <div class="text-light order-1 md:order-1 animate-on-scroll animate-slide-left">
-        <h2 class="font-barlow text-light text-4xl md:text-5xl lg:text-5xl font-bold mb-8 animate-on-scroll stagger-1">
-          {{ t('home.centro.title') }}
-        </h2>
-        
-        <p class="text-light text-xl md:text-2xl mb-8 leading-relaxed animate-on-scroll stagger-2">
-          {{ t('home.centro.description') }}
-        </p>
-        
-        <ul class="text-xl md:text-2xl space-y-3 leading-relaxed">
-          <li v-for="service in t('home.centro.services')" :key="service" class="flex items-start">
-            <span class="text-light mr-3">•</span>
-            <span class="text-light">{{ service }}</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Right Image -->
-      <div class="flex justify-center md:justify-end order-2 md:order-2">
-        <div class="relative w-full max-w-md md:max-w-lg">
-          <img 
-            src="/img/sessio/4.jpg" 
-            alt="Centro especializado en fisioterapia para la mujer"
-            class="w-full h-auto min-h-[400px] md:min-h-[500px] lg:min-h-[600px] max-h-[700px] object-cover rounded-3xl shadow-2xl border-8 border-white"
-          />
+      <!-- Two Column Layout: Left (title + cards), Right (image) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Column: Title and Cards -->
+        <div>
+          <h2 class="font-barlow text-light text-3xl md:text-5xl lg:text-5xl font-bold mb-2 animate-on-scroll stagger-1">
+            {{ t('home.centro.title') }}
+          </h2>
+          <p class="text-light text-xl md:text-1xl max-w-3xl leading-relaxed mb-8 animate-on-scroll stagger-2">
+            {{ t('home.centro.description') }}
+          </p>
+          <div class="grid grid-cols-1 gap-4">
+            <div 
+              v-for="(service, index) in t('home.centro.services')" 
+              :key="service" 
+              class="bg-white/10 rounded-xl px-4 py-2 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 animate-on-scroll"
+              :class="`stagger-${index + 3}`"
+            >
+              <h3 class="text-light font-barlow text-base md:text-lg font-semibold leading-tight text-center">
+                {{ service }}
+              </h3>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column: Only Image -->
+        <div class="flex justify-center">
+          <div class="relative w-full max-w-2xl">
+            <img 
+              src="/img/sessio/4.jpg" 
+              alt="Centro especializado en fisioterapia para la mujer"
+              class="w-full h-auto min-h-[400px] md:min-h-[600px] max-h-[700px] object-cover rounded-3xl shadow-2xl border-4 border-white/30"
+            />
+          </div>
         </div>
       </div>
 

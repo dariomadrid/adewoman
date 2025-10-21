@@ -42,7 +42,7 @@
                 </div>
                 
                 <!-- Description -->
-                <blockquote class="text-slate-700 text-sm md:text-base lg:text-lg mb-4 md:mb-6 italic text-center leading-relaxed font-light line-clamp-4">
+                <blockquote class="text-slate-700 text-sm md:text-base lg:text-lg mb-4 md:mb-6 italic text-center leading-relaxed font-light">
                   "{{ opinion.description }}"
                 </blockquote>
                 
@@ -89,7 +89,7 @@
                 </div>
                 
                 <!-- Description -->
-                <blockquote class="text-slate-700 text-sm md:text-base lg:text-lg mb-4 md:mb-6 italic text-center leading-relaxed font-light line-clamp-4">
+                <blockquote class="text-slate-700 text-sm md:text-base lg:text-lg mb-4 md:mb-6 italic text-center leading-relaxed font-light">
                   "{{ opinion.description }}"
                 </blockquote>
                 

@@ -21,15 +21,15 @@
             {{ t('home.elegirnos.title') }}
           </h2>
           
-          <p class="text-primary text-xl md:text-2xl text-justify mb-6 leading-relaxed">
+          <p class="text-primary text-xl md:text-1xl text-justify mb-6 leading-relaxed">
             {{ t('home.elegirnos.description1') }}
           </p>
           
-          <p class="text-primary text-xl md:text-2xl mb-6 leading-relaxed">
+          <p class="text-primary text-xl md:text-1xl mb-6 leading-relaxed">
             {{ t('home.elegirnos.description2') }}
           </p>
           
-          <p class="text-primary text-xl md:text-2xl text-justify leading-relaxed">
+          <p class="text-primary text-xl md:text-1xl text-justify leading-relaxed">
             {{ t('home.elegirnos.description3') }}
           </p>
         </div>

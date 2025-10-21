@@ -276,7 +276,7 @@ export default {
   },
   methods: {
     t(key) {
-      return t(key, this.currentLang);
+      return t(key, this.lang);
     },
     scrollToTop() {
       window.scrollTo({
