@@ -123,30 +123,40 @@ export default {
       isSubmitting.value = true;
       submitMessage.value = '';
       try {
-        // Build form data for Netlify
-        const data = new FormData();
-        data.append('form-name', 'contact');
-        data.append('name', form.name);
-        data.append('email', form.email);
-        data.append('message', form.message);
-        data.append('bot-field', '');
+        // Create FormData for Netlify submission
+        const formData = new FormData();
+        formData.append('form-name', 'contact');
+        formData.append('name', form.name);
+        formData.append('email', form.email);
+        formData.append('message', form.message);
 
-        await fetch('/', {
+        // Submit to Netlify
+        const response = await fetch('/', {
           method: 'POST',
-          headers: { 'Accept': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams([...data.entries()]).toString()
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
         });
 
-        // Reset form
-        form.name = '';
-        form.email = '';
-        form.message = '';
+        if (response.ok) {
+          // Reset form
+          form.name = '';
+          form.email = '';
+          form.message = '';
 
-        submitMessage.value = t('contact.success');
-        submitMessageClass.value = 'bg-green-100 text-green-800 border border-green-300';
-        setTimeout(() => { submitMessage.value = ''; }, 5000);
+          submitMessage.value = t('contact.success', currentLang.value);
+          submitMessageClass.value = 'bg-green-100 text-green-800 border border-green-300';
+
+          // Clear success message after 5 seconds
+          setTimeout(() => {
+            submitMessage.value = '';
+          }, 5000);
+        } else {
+          throw new Error('Form submission failed');
+        }
+
       } catch (error) {
-        submitMessage.value = t('contact.form.error');
+        console.error('Form submission error:', error);
+        submitMessage.value = t('contact.error', currentLang.value);
         submitMessageClass.value = 'bg-red-100 text-red-800 border border-red-300';
       } finally {
         isSubmitting.value = false;
