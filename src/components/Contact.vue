@@ -26,7 +26,7 @@
             {{ t('contact.title') }}
           </h2>
        
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+          <form name="contact" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4" @submit.prevent="handleSubmit">
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
             <input
@@ -122,24 +122,29 @@ export default {
     const handleSubmit = async () => {
       isSubmitting.value = true;
       submitMessage.value = '';
-      
       try {
-        // Simulate form submission (replace with actual API call)
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
+        // Build form data for Netlify
+        const data = new FormData();
+        data.append('form-name', 'contact');
+        data.append('name', form.name);
+        data.append('email', form.email);
+        data.append('message', form.message);
+        data.append('bot-field', '');
+
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Accept': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams([...data.entries()]).toString()
+        });
+
         // Reset form
         form.name = '';
         form.email = '';
         form.message = '';
-        
-  submitMessage.value = t('contact.success');
+
+        submitMessage.value = t('contact.success');
         submitMessageClass.value = 'bg-green-100 text-green-800 border border-green-300';
-        
-        // Clear success message after 5 seconds
-        setTimeout(() => {
-          submitMessage.value = '';
-        }, 5000);
-        
+        setTimeout(() => { submitMessage.value = ''; }, 5000);
       } catch (error) {
         submitMessage.value = t('contact.form.error');
         submitMessageClass.value = 'bg-red-100 text-red-800 border border-red-300';
