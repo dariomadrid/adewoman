@@ -70,10 +70,6 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.handleScroll();
-    // Fallback: hide spinner after 5 seconds if video event does not fire
-    setTimeout(() => {
-      this.isVideoLoading = false;
-    }, 5000);
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
