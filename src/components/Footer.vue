@@ -20,10 +20,8 @@
       <!-- Contact Information Grid with Positioned Button -->
       <div class="relative mb-8 w-full">
         
-        <!-- Four Columns Grid with Custom Widths -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 xl:gap-8 w-full pr-16 lg:pr-20"
-             style="grid-template-columns: 1fr; grid-template-columns: repeat(2, 1fr); grid-template-columns: 1fr 1fr 1fr 0.6fr;"
-        >
+     <!-- Responsive Footer Grid -->
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 xl:gap-12 w-full pr-0 lg:pr-20">
           
           <!-- Location Section -->
           <div class="text-left">
@@ -241,7 +239,7 @@
 
       <!-- Copyright Section -->
       <div class="border-t border-gray-400 pt-6">
-        <div class="text-right">
+        <div class="text-center lg:text-right">
           <p class="text-sm text-gray-400">
             © 2025 {{ t('home.hero.title') }} {{ t('home.hero.subtitle') }}. {{ t('footer.copyright') }}
           </p>
