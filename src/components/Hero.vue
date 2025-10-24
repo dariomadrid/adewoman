@@ -4,6 +4,11 @@
     ref="heroSection"
     class="hero-section relative min-h-screen flex items-end justify-center bg-gray-800 pb-16 overflow-hidden"
   >
+    <!-- Loading Spinner -->
+    <div v-if="isVideoLoading" class="absolute inset-0 flex items-center justify-center z-20 bg-black/40">
+      <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-accent"></div>
+      <span class="sr-only">Loading video...</span>
+    </div>
     <!-- Background Video with smooth parallax -->
     <video 
       ref="heroBackground"
@@ -14,8 +19,8 @@
       playsinline
       class="absolute inset-0 w-full h-full object-cover will-change-transform transition-transform duration-75 ease-out blur-none opacity-90"
       style="z-index: 1; transform: translate3d(0, 0, 0) scale(1.1);"
-      @error="onVideoError"
-      @loadeddata="onVideoLoad"
+  @error="onVideoError"
+  @loadeddata="onVideoLoad"
     />
     
     <!-- Content Container with subtle parallax -->
@@ -50,7 +55,8 @@ export default {
   },
   data() {
     return {
-      scrollY: 0
+      scrollY: 0,
+      isVideoLoading: true
     }
   },
   computed: {
@@ -64,6 +70,10 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.handleScroll();
+    // Fallback: hide spinner after 5 seconds if video event does not fire
+    setTimeout(() => {
+      this.isVideoLoading = false;
+    }, 5000);
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -119,7 +129,10 @@ export default {
       }
     },
     onVideoLoad(event) {
-      console.log('Video loaded successfully:', event.target.src);
+      if (this.isVideoLoading) {
+        this.isVideoLoading = false;
+        console.log('Video loaded successfully:', event.target.src);
+      }
     }
   }
 }
