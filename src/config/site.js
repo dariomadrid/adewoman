@@ -20,7 +20,7 @@ export const siteConfig = {
   // Contact information
   contact: {
     email: "info@adefisio.com",
-    phone: "+34 661 01 93 35",
+    phone: "+34 611612844",
     address: {
       street: "Carrer Marquès de Caldes de Montbuí, 62",
       city: "Girona",
