@@ -37,8 +37,8 @@ export const siteConfig = {
       label: "Instagram"
     },
     whatsapp: {
-      url: "https://wa.me/34661019335",
-      phone: "+34 661 01 93 35",
+      url: "https://wa.me/34611612844",
+      phone: "+34 611612844",
       label: "WhatsApp"
     }
   },
